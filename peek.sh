@@ -1,11 +1,10 @@
 file="$1"
 
+num="$2"
 
-head -n3 "$file"
 
+head -n "$num" "$file"
 
 echo "..."
 
-
-tail -n3 "$file"
-
+tail -n "$num" "$file"
