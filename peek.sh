@@ -2,18 +2,15 @@ file="$1"
 
 num="$2"
 
-if [[ -z "$2" ]]; then
+if [[ $(wc -l < "$file") -le $((2 * num)) ]]; then
 
-echo "Imprimiendo 3 primeras y 3 ultimas lineas por defecto"
+echo "Imprimiendo todas as lineas"
+cat  "$file"
 
-head -n 3  "$file"
-
-echo "..."
-
-tail -n 3  "$file"
 
 else 
 
+echo "This file is long"
 head -n "$num" "$file"
 
 echo "..."
